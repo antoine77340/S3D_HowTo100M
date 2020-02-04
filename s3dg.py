@@ -10,6 +10,7 @@ S3D-G was proposed by:
   S. Xie, C. Sun, J. Huang, Z. Tu and K. Murphy,
   Rethinking Spatiotemporal Feature Learning For Video Understanding.
   https://arxiv.org/abs/1712.04851.
+  Tensorflow code: https://github.com/tensorflow/models/blob/master/research/slim/nets/s3dg.py
 
 The S3D architecture was slightly modified with a space to depth trick for TPU
 optimization.
