@@ -32,6 +32,9 @@ net.load_state_dict(th.load('s3d_howto100m.pth'))
 
 # Video input should be of size Batch x 3 x TIME x Height x WIDTH and normalized to [0, 1] 
 video = th.rand(2, 3, 16, 224, 224)
+
+# Evaluation mode
+net = net.eval()
  
 # Video inference
 video_output = net(video)
