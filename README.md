@@ -11,7 +11,7 @@ You will first need to download the model weights and the word dictionary.
 
 ```sh
 wget https://www.rocq.inria.fr/cluster-willow/amiech/howto100m/s3d_howto100m.pth
-https://www.rocq.inria.fr/cluster-willow/amiech/howto100m/s3d_dict.npy
+wget https://www.rocq.inria.fr/cluster-willow/amiech/howto100m/s3d_dict.npy
 ```
 
 
@@ -40,16 +40,16 @@ video_output = net(video)
 text_output = net.text_module(['open door', 'cut tomato'])
 ```
 
-video_output is a dictionary containing two keys:
-- 'video_embedding': This is the video embedding (size 512) from the joint text-video space. It should be used to compute similarity scores with text inputs using the text embedding.
-- 'mixed_5c': This is the global averaged pooled feature from S3D of dimension 1024. This should be use for classification on downstream tasks.
+*video_output* is a dictionary containing two keys:
+- *video_embedding*: This is the video embedding (size 512) from the joint text-video space. It should be used to compute similarity scores with text inputs using the text embedding.
+- *mixed_5c*: This is the global averaged pooled feature from S3D of dimension 1024. This should be use for classification on downstream tasks.
 
-text_output is also a dictionary with a single key:
-- 'text_embedding': It is the text embedding (size 512) from the joint text-video space. To compute the similarity score between text and video, you would compute the dot product between text_embedding and video_embedding
+*text_output* is also a dictionary with a single key:
+- *text_embedding*: It is the text embedding (size 512) from the joint text-video space. To compute the similarity score between text and video, you would compute the dot product between *text_embedding* and *video_embedding*.
 
 ## Computing all the pairwise video-text similarities:
 
-The similarity scores can be computed with a dot product between the text_embedding and the video_embedding.
+The similarity scores can be computed with a dot product between the *text_embedding* and the *video_embedding*.
 
 ```python
 video_embedding = video_output['video_embedding']
