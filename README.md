@@ -83,11 +83,11 @@ Bibtex:
    year={2019},
 }
 
-@article{miech19endtoend,
+@inproceedings{miech19endtoend,
    title={{E}nd-to-{E}nd {L}earning of {V}isual {R}epresentations from {U}ncurated {I}nstructional {V}ideos},
    author={Miech, Antoine and Alayrac, Jean-Baptiste and Smaira, Lucas and Laptev, Ivan and Sivic, Josef and Zisserman, Andrew},
-   journal={arXiv preprint arXiv:1912.06430},
-   year={2019},
+   booktitle={CVPR},
+   year={2020},
 }
 ```
 # Acknowledgements
