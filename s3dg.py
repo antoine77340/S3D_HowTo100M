@@ -225,7 +225,7 @@ class Sentence_Embedding(nn.Module):
             return th.zeros(self.max_words).long()
 
     def _words_to_ids(self, x):
-        split_x = [self._words_to_token(self._split_text(sent.lower()) for sent in x]
+        split_x = [self._words_to_token(self._split_text(sent.lower())) for sent in x]
         return th.stack(split_x, dim=0)
 
     def forward(self, x):
