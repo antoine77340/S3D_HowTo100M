@@ -30,8 +30,8 @@ net = S3D('s3d_dict.npy', 512)
 # Load the model weights
 net.load_state_dict(th.load('s3d_howto100m.pth'))
 
-# Video input should be of size Batch x 3 x TIME x Height x WIDTH and normalized to [0, 1] 
-video = th.rand(2, 3, 16, 224, 224)
+# Video input should be of size Batch x 3 x T x H x W and normalized to [0, 1] 
+video = th.rand(2, 3, 32, 224, 224)
 
 # Evaluation mode
 net = net.eval()
@@ -42,6 +42,7 @@ video_output = net(video)
 # Text inference
 text_output = net.text_module(['open door', 'cut tomato'])
 ```
+NB: The video network is fully convolutional (with global average pooling in time and space at the end). However, we recommend using T=32 frames (same as during training), T=16 frames also works ok. For H and W we have been using values from 200 to 256.
 
 *video_output* is a dictionary containing two keys:
 - *video_embedding*: This is the video embedding (size 512) from the joint text-video space. It should be used to compute similarity scores with text inputs using the text embedding.
