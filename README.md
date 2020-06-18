@@ -3,7 +3,7 @@ This repo contains a PyTorch S3D Text-Video model trained from scratch on HowTo1
 If you use this model, we would appreciate if you could cite [1] and [2] :).
 
 The official Tensorflow hub version of this model can be found here: https://tfhub.dev/deepmind/mil-nce/s3d/1
-
+with a colab on how to use it here: https://colab.research.google.com/github/tensorflow/hub/blob/master/examples/colab/text_to_video_retrieval_with_s3d_milnce.ipynb
 
 ## Getting the data
 
